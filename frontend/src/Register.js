@@ -9,7 +9,7 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:5000/auth/register", data);
+    await axios.post("https://simplelogin-afq7.onrender.com/auth/register", data);
     navigate("/login");
   };
 

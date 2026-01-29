@@ -18,7 +18,8 @@ function Login() {
       return alert("Password must be at least 6 characters");
     }
 
-    const res = await axios.post("http://localhost:5000/auth/login", data);
+    const res = await axios.post("https://simplelogin-afq7.onrender.com/auth/login", data);
+
 
     if (res.data.user) {
       localStorage.setItem("user", JSON.stringify(res.data.user));
