@@ -9,8 +9,16 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
     await axios.post("https://simplelogin-afq7.onrender.com/auth/register", data);
+    
+    alert("Registration successful");
+
     navigate("/login");
+    }
+    catch(err){
+      alert("Registration failed. User may already exist.");
+    }
   };
 
   return (

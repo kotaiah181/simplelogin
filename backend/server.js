@@ -11,13 +11,10 @@ app.use(cors());
 app.use("/auth", authRoutes);
 
 // CONNECT TO ATLAS
-mongoose
-  .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log("MongoDB Error:", err));
+
 
 // HOME ROUTE
 app.get("/", (req, res) => {
